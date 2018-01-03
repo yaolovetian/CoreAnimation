@@ -7,8 +7,12 @@
 //
 
 #import "CAKeyFrameViewController.h"
+#import "DrawView.h"
 
 @interface CAKeyFrameViewController ()
+
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UILabel *label;
 
 @end
 
@@ -17,7 +21,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"关键帧动画";
     self.view.backgroundColor = [UIColor whiteColor];
+    DrawView *drawView = [[DrawView alloc] initWithFrame:self.view.bounds];
+    drawView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:drawView];
+    [self.view addSubview:self.label];
+    [self.view addSubview:self.imageView];
+}
+
+- (UIImageView *)imageView {
+    if (!_imageView) {
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(50, 200, 100, 100)];
+        _imageView.image = [UIImage imageNamed:@"1.jpg"];
+    }
+    return _imageView;
+}
+
+- (UILabel *)label {
+    if (!_label) {
+        _label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 200, 50)];
+        _label.text = @"请开始你的表演";
+        _label.textColor = [UIColor redColor];
+    }
+    return _label;
 }
 
 - (void)didReceiveMemoryWarning {
