@@ -8,6 +8,7 @@
 
 #import "DemoViewController.h"
 #import "MusicViewController.h"
+#import "SinaViewController.h"
 
 @interface DemoViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -78,7 +79,7 @@
             break;
         case 2:
         {
-            
+            vc = [SinaViewController new];
         }
             break;
         default:
