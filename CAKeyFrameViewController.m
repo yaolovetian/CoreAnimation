@@ -40,8 +40,9 @@
 
 - (UILabel *)label {
     if (!_label) {
-        _label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 200, 50)];
-        _label.text = @"请开始你的表演";
+        _label = [[UILabel alloc] initWithFrame:CGRectMake(50, 100, 300, 50)];
+        _label.numberOfLines = 0;
+        _label.text = @"请开始你的表演，开始画线，图片会跟着线的轨迹走动";
         _label.textColor = [UIColor redColor];
     }
     return _label;
